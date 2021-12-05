@@ -1,6 +1,6 @@
 import React from 'react'
 import { TodoType } from 'src/types'
-import Todo from './Todo'
+import Task from './Task'
 
 interface TasksListProps {
   tasks: TodoType[]
@@ -16,10 +16,10 @@ const TasksList: React.FC<TasksListProps> = ({ tasks, handleTaskCheck }) => {
         {tasks &&
           tasks.map((item) => (
             <li key={item.id}>
-              <Todo
+              <Task
                 title={item.title}
-                completed={item.completed}
-                handleTaskCheck={() => {
+                isCompleted={item.completed}
+                onComplete={() => {
                   handleTaskCheck(item.id)
                 }}
               />
