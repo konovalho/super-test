@@ -1,13 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Task from 'src/blocks/Task'
 import '@testing-library/jest-dom'
+import Task from 'src/blocks/Task'
 
 const TASK_TEXT = 'Simple task'
 
 test('renders a Task', () => {
-  const { container, baseElement, getByText } = render(
-    <Task title={TASK_TEXT} isCompleted={false} onComplete={() => {}} />,
+  const { container, getByText } = render(
+    <Task title={TASK_TEXT} id={1} isCompleted={false} onComplete={() => {}} />,
   )
   expect(getByText(TASK_TEXT)).toBeInTheDocument()
 

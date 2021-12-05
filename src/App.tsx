@@ -1,19 +1,12 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import { useQuery } from 'react-query'
 import Users from 'src/blocks/Users'
-import { css } from '@linaria/core'
+
 import { UserType, ActionTypes } from 'src/types'
 import TasksList from 'src/blocks/TasksList'
 import { reducer } from 'src/reducers'
 
-const root = css`
-  padding: 100px;
-`
-
-const wrapper = css`
-  display: flex;
-  justify-content: space-between;
-`
+import styles from './App.styles'
 
 const initialState = {}
 
@@ -63,13 +56,14 @@ function App() {
   }
 
   return (
-    <div className={root}>
-      <h1>Onboarding tracker</h1>
-      <br />
-      <div className={wrapper}>
+    <div className={styles.root}>
+      <header className={styles.headerClass}>
+        <h1 className={styles.titleClass}>Onboarding tracker</h1>
+      </header>
+      <main className={styles.wrapper}>
         <Users users={users} activeUser={activeUser} setActiveUser={setActiveUser} />
         <TasksList tasks={todos[activeUser]} handleTaskCheck={handleTaskCheck} />
-      </div>
+      </main>
     </div>
   )
 }

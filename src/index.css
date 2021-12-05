@@ -13,4 +13,6 @@ code {
   box-sizing: border-box;
   background-color: transparent;
   border: none;
+  color: #151d2c;
+  padding: 0;
 }

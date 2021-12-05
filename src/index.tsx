@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import reportWebVitals from './reportWebVitals'
+import App from './App'
+
 import './styles/reset.css'
 import './index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 const queryClient = new QueryClient()
 
