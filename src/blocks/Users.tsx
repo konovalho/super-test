@@ -21,13 +21,14 @@ const Users: React.FC<UsersProps> = ({ users, activeUser, setActiveUser }) => {
       <ul>
         {users.map((item) => (
           <li key={item.id}>
-            <User
-              name={item.name}
-              isActive={activeUser === item.id}
-              handleClick={() => {
+            <button
+              type="button"
+              onClick={() => {
                 setActiveUser(item.id)
               }}
-            />
+            >
+              <User name={item.name} isActive={activeUser === item.id} />
+            </button>
           </li>
         ))}
       </ul>

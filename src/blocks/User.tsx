@@ -4,7 +4,6 @@ import { css } from '@linaria/core'
 interface UserProps {
   name: string
   isActive?: boolean
-  handleClick: () => void
 }
 
 const root = css`
@@ -20,9 +19,9 @@ const root = css`
   }
 `
 
-const User: React.FC<UserProps> = ({ name, isActive, handleClick }) => {
+const User: React.FC<UserProps> = ({ name, isActive }) => {
   return (
-    <div className={root} onClick={handleClick}>
+    <div className={root}>
       {name}
       {isActive && <span>{'>>'}</span>}
     </div>
